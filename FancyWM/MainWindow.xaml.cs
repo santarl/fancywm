@@ -467,7 +467,7 @@ namespace FancyWM
                         HideKeyPress = true,
                         ScanOnRelease = false,
                         ClearModifiersOnMiss = false,
-                        SideAgnostic = false,
+                        SideAgnostic = true,
                     };
                     hk.Pressed += delegate { OnDirectHotkeyPressed(x.Key); };
                     newHotkeys.Add(hk);
