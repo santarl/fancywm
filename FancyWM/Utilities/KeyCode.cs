@@ -36,6 +36,7 @@ namespace FancyWM.Utilities
                 KeyCode.RightCtrl => true,
                 KeyCode.LWin => true,
                 KeyCode.RWin => true,
+                KeyCode.Apps => true,
                 _ => false,
             }).ToArray();
 
