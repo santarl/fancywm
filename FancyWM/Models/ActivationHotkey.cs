@@ -14,20 +14,24 @@ namespace FancyWM.Models
 
         public static IReadOnlyList<ActivationHotkey> AllowedHotkeys { get; } =
         [
-            new([KeyCode.LeftAlt], KeyCode.LWin, "Alt + Win ⊞"),
-            new([KeyCode.LeftAlt], KeyCode.LeftCtrl, "Alt + Ctrl"),
-            new([KeyCode.LeftAlt], KeyCode.LeftShift, "Alt + Shift ⇧"),
-            new([KeyCode.LeftCtrl], KeyCode.LWin, "Ctrl + Win ⊞"),
-            new([KeyCode.LeftCtrl], KeyCode.LeftShift, "Ctrl + Shift ⇧"),
-            new([KeyCode.LeftShift], KeyCode.LWin, "Shift ⇧ + Win ⊞"),
-            new([KeyCode.LeftAlt, KeyCode.LeftCtrl], KeyCode.LWin, "Alt + Ctrl + Win ⊞"),
-            new([KeyCode.LeftAlt, KeyCode.LeftCtrl], KeyCode.LeftShift, "Alt + Ctrl + Shift ⇧"),
-            new([KeyCode.LeftAlt, KeyCode.LeftShift], KeyCode.LWin, "Alt + Shift ⇧ + Win ⊞"),
-            new([KeyCode.LeftCtrl, KeyCode.LeftShift], KeyCode.LWin, "Ctrl + Shift ⇧ + Win ⊞"),
+            new([KeyCode.LWin], "LWin ⊞"),
+            new([KeyCode.LeftAlt], "LAlt"),
+            new([KeyCode.LeftCtrl], "LCtrl"),
+            new([KeyCode.LeftShift], "LShift ⇧"),
+            new([KeyCode.LeftAlt], KeyCode.LWin, "LAlt + LWin ⊞"),
+            new([KeyCode.LeftAlt], KeyCode.LeftCtrl, "LAlt + LCtrl"),
+            new([KeyCode.LeftAlt], KeyCode.LeftShift, "LAlt + LShift ⇧"),
+            new([KeyCode.LeftCtrl], KeyCode.LWin, "Ctrl + LWin ⊞"),
+            new([KeyCode.LeftCtrl], KeyCode.LeftShift, "Ctrl + LShift ⇧"),
+            new([KeyCode.LeftShift], KeyCode.LWin, "Shift ⇧ + LWin ⊞"),
+            new([KeyCode.LeftAlt, KeyCode.LeftCtrl], KeyCode.LWin, "LAlt + LCtrl + LWin ⊞"),
+            new([KeyCode.LeftAlt, KeyCode.LeftCtrl], KeyCode.LeftShift, "LAlt + LCtrl + LShift ⇧"),
+            new([KeyCode.LeftAlt, KeyCode.LeftShift], KeyCode.LWin, "LAlt + LShift ⇧ + LWin ⊞"),
+            new([KeyCode.LeftCtrl, KeyCode.LeftShift], KeyCode.LWin, "Ctrl + LShift ⇧ + LWin ⊞"),
             new([KeyCode.None], KeyCode.None, "Disabled"),
         ];
 
-        public static ActivationHotkey Default { get; } = AllowedHotkeys.First(x => x.Description == "Shift ⇧ + Win ⊞");
+        public static ActivationHotkey Default { get; } = AllowedHotkeys.First(x => x.Description == "Shift ⇧ + LWin ⊞");
 
         private ActivationHotkey(KeyCode[] modifierKeys, KeyCode key, string description)
         {

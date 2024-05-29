@@ -412,9 +412,9 @@ namespace FancyWM
             m_cmdHks = CreateHotkeyVariants(hk)
                 .Select(hk => new LowLevelHotkey(m_llkbdHook, hk.KeyA, hk.KeyB)
                 {
-                    HideKeyPress = false,
+                    HideKeyPress = true,
                     ScanOnRelease = true,
-                    SideAgnostic = true,
+                    SideAgnostic = false,
                     ClearModifiersOnMiss = true,
                 }).ToArray();
 
